@@ -8,6 +8,7 @@ use ark_crypto_primitives::{
     },
     sponge::rescue::RescueConfig,
 };
+
 use ark_ff::PrimeField;
 use ark_r1cs_std::{alloc::AllocVar, eq::EqGadget, fields::fp::FpVar};
 use ark_relations::gr1cs::{
@@ -51,7 +52,7 @@ pub fn create_test_rescue_parameter<F: PrimeField + ark_ff::PrimeField>(
         "20974350070050476191779096203274386335076221000211055129041463479975432473805",
     )
     .unwrap();
-    RescueConfig::<F>::new(RESCUE_ROUNDS, 5, alpha_inv, mds, ark, 3, 1, 1)
+    RescueConfig::<F>::new(RESCUE_ROUNDS, 5, alpha_inv, mds, ark, 3, 1)
 }
 
 impl<F: PrimeField + ark_ff::PrimeField + ark_crypto_primitives::sponge::Absorb>

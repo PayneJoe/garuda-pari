@@ -160,14 +160,14 @@ impl<E: Pairing> Garuda<E> {
         if zk {
             let timer_zk = start_timer!(|| "ZK Setup");
 
-            for i in 0..ZK_BOUND {
+            for _ in 0..ZK_BOUND {
                 let a = E::ScalarField::from(100);
                 let b = E::ScalarField::from(200);
                 let c = a * b;
                 let a_wit = cs.new_witness_variable(|| Ok(a))?;
                 let b_wit = cs.new_witness_variable(|| Ok(b))?;
                 let c_wit = cs.new_witness_variable(|| Ok(c))?;
-                cs.enforce_r1cs_constraint(lc!() + a_wit, lc!() + b_wit, lc!() + c_wit)?;
+                cs.enforce_r1cs_constraint(|| lc!() + a_wit, || lc!() + b_wit, || lc!() + c_wit)?;
             }
             end_timer!(timer_zk);
         }

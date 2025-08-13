@@ -12,12 +12,13 @@ ark-ec = { version = "^0.5.0", default-features = false }
 ark-poly = { version = "^0.5.0", default-features = false }
 ark-r1cs-std = {  git = "https://github.com/arkworks-rs/r1cs-std.git" , default-features = true}
 ark-relations = {  git = "https://github.com/arkworks-rs/snark.git", default-features = true }
-ark-groth16 = { git = "https://github.com/alireza-shirzad/groth16.git", default-features = false }
-ark-crypto-primitives = { git = "https://github.com/alireza-shirzad/crypto-primitives.git",default-features = false, features = [ "snark", "crh", "constraints" ] }
-# ark-crypto-primitives = { version = "^0.5.0",default-features = false, features = [ "snark", "crh", "constraints" ] }
-ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra", default-features = false, features = ["curve"] }
-ark-bn254 = { git = "https://github.com/arkworks-rs/algebra", default-features = false, features = ["curve"] }
-ark-poly-commit = { git = "https://github.com/alireza-shirzad/poly-commit"}
+ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra.git", default-features = false, features = ["curve"] }
+ark-bn254 = { git = "https://github.com/arkworks-rs/algebra.git", default-features = false, features = ["curve"] }
+ark-pallas = { git = "https://github.com/arkworks-rs/algebra.git", default-features = false, features = [ "curve" ] }
+
+ark-groth16 = { git = "https://github.com/arkworks-rs/groth16.git", default-features = false }
+ark-crypto-primitives = { git = "https://github.com/arkworks-rs/crypto-primitives.git",default-features = false, features = [ "snark", "crh", "constraints" ] }
+ark-poly-commit = { git = "https://github.com/arkworks-rs/poly-commit.git"}
 merlin = { version = "3.0.0", default-features = false }
 displaydoc = { version = "0.2.3", default-features = false }
 tracing = { version = "0.1", default-features = false, features = [ "attributes" ] }
@@ -60,9 +61,13 @@ ark-ff = { git = "https://github.com/arkworks-rs/algebra.git" }
 ark-ec = { git = "https://github.com/arkworks-rs/algebra.git" }
 ark-poly = { git = "https://github.com/arkworks-rs/algebra.git" }
 ark-serialize = { git = "https://github.com/arkworks-rs/algebra.git" }
-# ark-relations = { path = "../arkworks/snark/relations" }
 ark-relations = { git = "https://github.com/arkworks-rs/snark.git" }
 ark-r1cs-std = { git = "https://github.com/arkworks-rs/r1cs-std.git" }
+ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra.git" }
+ark-bn254 = { git = "https://github.com/arkworks-rs/algebra.git" }
+ark-crypto-primitives = { git = "https://github.com/arkworks-rs/crypto-primitives.git"}
+ark-groth16 = { git = "https://github.com/arkworks-rs/groth16.git"}
+ark-poly-commit = { git = "https://github.com/arkworks-rs/poly-commit.git"}
 
 # [patch."https://github.com/arkworks-rs/snark"]
 # ark-relations = { path = "../arkworks/snark/relations" }
