@@ -113,5 +113,5 @@ parallel = [
     "rayon",
 ]
 
-r1cs = ["ark-crypto-primitives/r1cs"]
-gr1cs = ["ark-crypto-primitives/gr1cs"]
+r1cs = ["ark-crypto-primitives/constraints"]
+gr1cs = ["ark-crypto-primitives/constraints"]
