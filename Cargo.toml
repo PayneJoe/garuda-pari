@@ -29,7 +29,7 @@ num-bigint = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 hashbrown = { version = "0.15", default-features = false , features = [ "default-hasher"] }
-indexmap = { version = "2.9.0", default-features = false }
+indexmap = { version = "2.10.0", default-features = false }
 
 [profile.release]
 opt-level = 3
@@ -63,14 +63,8 @@ ark-poly = { git = "https://github.com/arkworks-rs/algebra.git" }
 ark-serialize = { git = "https://github.com/arkworks-rs/algebra.git" }
 ark-relations = { git = "https://github.com/arkworks-rs/snark.git" }
 ark-r1cs-std = { git = "https://github.com/arkworks-rs/r1cs-std.git" }
-ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra.git" }
-ark-bn254 = { git = "https://github.com/arkworks-rs/algebra.git" }
-ark-crypto-primitives = { git = "https://github.com/arkworks-rs/crypto-primitives.git"}
+ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra.git", features = ["curve"]  }
+ark-bn254 = { git = "https://github.com/arkworks-rs/algebra.git", features = ["curve"]  }
+ark-crypto-primitives = { git = "https://github.com/arkworks-rs/crypto-primitives.git", default-features = false, features = [ "snark", "crh", "constraints" ] }
 ark-groth16 = { git = "https://github.com/arkworks-rs/groth16.git"}
 ark-poly-commit = { git = "https://github.com/arkworks-rs/poly-commit.git"}
-
-# [patch."https://github.com/arkworks-rs/snark"]
-# ark-relations = { path = "../arkworks/snark/relations" }
-
-# [patch."https://github.com/arkworks-rs/r1cs-std"]
-# ark-r1cs-std = { path = "../arkworks/r1cs-std" }
